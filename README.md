@@ -1,6 +1,6 @@
 # Differential_Drive (Phase 3c)
 
-## Step 1
+## Step 1 (A* implementation of Differential Drive)
 
 ### Run Code
 Open the file "a_star_differential_drive.py" from 'code' directory in an IDE (Spyder, VS Code etc) of your choice. Enter valid input such that point does not lie in obstacle space or outside of workspace. Also enter a valid angle for the starting vector. For invalid inputs it exits with invalid input prompt. The video visualization can be found in 'Differential Drive Visualization (A-star).mp4'.
@@ -58,3 +58,33 @@ In this function, backtracking is done from goal node to start node to obtain op
 Using Matplotlib, animation is generated. Firstly, animation for node exploration is generated and followed by optimal path trajectory's animation. 150 frames for node exploration and 50 frames for solution trajectory are used as default values for the animation. The resulting animation is also stored in 'Differential Drive Visualization (A-star).mp4' file.
 
 If you get error while trying to save the animation in .mp4 file format, installation of FFMPEG may be required. [https://ffmpeg.org/download.html]
+
+## Step 2 (Gazebo Simulation)
+
+### Description
+We implement A* algorithm on turtlebot by simulating it on gazebo using ROS.
+
+### Dependencies
+a) python -version 2.7
+
+b) python -version 3
+
+c) ROS
+
+d) Gazebo
+
+### Run 
+
+Follow all the steps mentioned in step 1. It generates two files as output. One file is a video and the other is for giving control instructions to gazebo to move the turtlebot3 using path obtained with from A* code. Firstly, build your catkin package with the 'differential_drive' ROS package. Make sure the 'gazebo_astar_simulation_test_case.py' file inside the 'src' directory of this package loads the 'action_controls_test_case_(1 0.5 0).txt' file which is inside the 'code' directory. 
+
+Open terminal and type the following, 
+
+###### roslaunch differential_drive test_case.launch
+
+and in another terminal tab, type the following, 
+
+###### rosrun differential_drive gazebo_astar_simulation_test_case.py
+
+We would observe the turtlebot to move in our new world with obstacles. 
+
+Note: The turtlebot3 occasionally collides with the rectangle at the center. This happens with the frequency rate that we set to publish the velocity messages. This is not properly tuned yet and in future with proper diagnostics, it will be tuned.  
