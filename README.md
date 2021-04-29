@@ -87,4 +87,4 @@ and in another terminal tab, type the following,
 
 We would observe the turtlebot to move in our new world with obstacles. 
 
-Note: The turtlebot3 occasionally collides with the rectangle at the center. This happens with the frequency rate that we set to publish the velocity messages. This is not properly tuned yet and in future with proper diagnostics, it will be tuned.  
+Note: The turtlebot3 occasionally collides with the rectangle at the center. This happens with the frequency rate that we had set to publish the velocity messages. This is not properly tuned yet and in future with proper diagnostics, it will be tuned.  
