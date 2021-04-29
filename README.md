@@ -10,19 +10,30 @@ This code aims at implementing A* algorithm for a differential drive (using non-
 
 ### Dependencies
 a) python -version 3
+
 b) numpy
+
 c) sys
+
 d) matplotlib
+
 e) time
+
 f) math
 
 ### Parameters
 a) r_wheel = 0.038 (radius of wheels in m)
+
 b) L_wheel = 0.354 (distance between two wheels in m)
+
 c) dt = 0.1 (differential time needed for integration in s)
+
 d) time = 1 (total time for each action in s)
+
 d) threshold_distance = 0.1 (threshold distance between each node in m)
+
 e) goal_threshold_radius = 0.2 (threshold radius for goal node in m)
+
 f) clearance = 0.25 (effective clearance i.e., radius of robot & obstacle clearance)
 
 Note: RPM's of left and right wheel are defined in the code and not obtained from the user. Six different actions are considered and these are (5, 5), (10, 10), (5, 0), (0, 5), (5, 10), and (10, 5).
